@@ -1,0 +1,1855 @@
+:root {
+  ---main-blue: #add8e6;
+  ---beige-color: #f5f5dc;
+  ---primary-grey: #f2f2f2;
+  ---sage-green: #9db795;
+  ---main-font: ;
+}
+
+* {
+  margin: 0;
+  padding: 0%;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  overflow-x: hidden;
+  max-width: 100%;
+  font-family: sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+/* ============================================
+   HEADER & NAVIGATION
+   ============================================ */
+
+.header {
+  width: 100%;
+}
+
+.nav-bar {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  padding: 1rem 2rem;
+  width: 100%;
+  background-color: var(---sage-green);
+  position: fixed;
+  z-index: 999;
+}
+
+.nav-bar ul {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-bar ul li {
+  list-style: none;
+}
+
+.nav-bar a {
+  color: var(--white);
+  text-decoration: none;
+  font-weight: 500;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.nav-bar a:hover,
+.mobile-menu li:hover {
+  color: var(---main-blue);
+}
+
+.nav-bar a::after,
+.mobile-menu li::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(---main-blue);
+  transition: width 0.3s ease;
+}
+
+.nav-bar a:hover::after,
+.mobile-menu li:hover::after {
+  width: 100%;
+}
+
+.nav-bar a:hover:focus:active,
+.mobile-menu li:hover:focus:active {
+  padding-bottom: 5px;
+  border-bottom: var(---main-blue);
+}
+
+.logo {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 0% 70% 0% 5%;
+  cursor: pointer;
+}
+
+.logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hamburger {
+  display: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 70%;
+  height: 100%;
+  background-color: #fff;
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
+  transition: right 0.3s ease-in-out;
+  padding: 20px;
+  z-index: 1000;
+}
+
+.mobile-menu.active {
+  right: 0;
+}
+
+.mobile-menu .close-btn {
+  font-size: 2rem;
+  cursor: pointer;
+  background: none;
+  border: none;
+  display: block;
+  margin-left: auto;
+}
+
+.mobile-menu ul {
+  list-style: none;
+  margin-top: 30px;
+}
+
+.mobile-menu ul li {
+  margin: 15px 0;
+}
+
+.mobile-menu ul li a {
+  font-size: 1.2rem;
+}
+
+/* ============================================
+   HERO SECTION
+   ============================================ */
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: clamp(2rem, 5vw, 4rem) clamp(1rem, 3vw, 2rem);
+  margin-bottom: clamp(2rem, 5vw, 5rem);
+  gap: clamp(2rem, 5vw, 4rem);
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
+  min-height: calc(100vh - 100px);
+}
+
+.cont-text {
+  flex: 1 1 450px;
+  min-width: 0;
+  padding-top: clamp(1rem, 5vw, 5rem);
+  padding-left: clamp(0, 3vw, 5%);
+}
+
+.hero-title {
+  font-size: clamp(2rem, 6vw, 3.5rem);
+  padding-bottom: clamp(1rem, 3vw, 1.5rem);
+  line-height: 1.2;
+  font-weight: 600;
+  color: #2d3e3f;
+  margin: 0;
+}
+
+.hero-title .highlight {
+  color: var(---sage-green);
+  display: inline-block;
+}
+
+.desktop-break {
+  display: block;
+}
+
+.hero-description {
+  font-size: clamp(0.875rem, 2vw, 1rem);
+  margin-bottom: clamp(1.5rem, 4vw, 2.5rem);
+  color: #666;
+  line-height: 1.7;
+  max-width: 550px;
+}
+
+.btn-2 {
+  display: inline-block;
+  padding: clamp(0.75rem, 2vw, 1rem) clamp(1.5rem, 3vw, 2rem);
+  font-size: clamp(0.875rem, 2vw, 1rem);
+  color: white;
+  background-color: var(---sage-green);
+  border: none;
+  border-radius: clamp(5px, 1vw, 8px);
+  cursor: pointer;
+  text-align: center;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  font-weight: 500;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.btn-2:hover {
+  background-color: var(---main-blue);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+.btn-2:active {
+  transform: translateY(0);
+}
+
+.cont-img {
+  position: relative;
+  flex: 1 1 400px;
+  min-width: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: clamp(0, 5vw, 15%);
+}
+
+.shape {
+  position: absolute;
+  width: clamp(250px, 70%, 450px);
+  height: clamp(250px, 70%, 450px);
+  background: linear-gradient(135deg, var(---sage-green), var(---main-blue));
+  border-radius: 30% 90% 90% 30% / 30% 30% 90% 90%;
+  top: clamp(50px, 15%, 100px);
+  left: clamp(10px, 5%, 20px);
+  z-index: -1;
+  opacity: 0.9;
+  animation: morphShape 8s ease-in-out infinite;
+}
+
+@keyframes morphShape {
+  0%,
+  100% {
+    border-radius: 30% 90% 90% 30% / 30% 30% 90% 90%;
+  }
+  50% {
+    border-radius: 90% 30% 30% 90% / 90% 90% 30% 30%;
+  }
+}
+
+.fade-bottom {
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 1) 75%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  mask-image: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 1) 75%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-size: 100% 100%;
+  mask-repeat: no-repeat;
+  mask-size: 100% 100%;
+}
+
+.hero-image {
+  width: clamp(280px, 70%, 500px);
+  height: auto;
+  max-width: 100%;
+  display: block;
+  position: relative;
+  z-index: 1;
+}
+
+/* ============================================
+   STEPS TO BEGIN SECTION
+   ============================================ */
+
+.steps-container {
+  margin: 0% 5rem;
+  padding: 3rem 0;
+}
+
+.steps-container .title {
+  text-align: center;
+  font-weight: 300;
+  font-size: 3rem;
+  margin-bottom: 2%;
+}
+
+.steps-cards {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.steps-card {
+  background-color: #416038;
+  width: 27%;
+  min-width: 280px;
+  height: 90%;
+  padding: 19px;
+  border-radius: 10px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease;
+}
+
+.steps-card:hover {
+  transform: translateY(-5px);
+}
+
+.card-img {
+  /* padding-left: 10em; */
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  /* height: 59%; */
+  margin: 5% 0% 15% 0%;
+}
+
+.card-img img {
+  width: 60%;
+}
+
+.card-text {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.text {
+  flex: 1;
+}
+
+.text #title {
+  color: white;
+  margin-bottom: 10px;
+}
+
+.text #subtitle {
+  font-size: 0.8rem;
+  color: #a3a29b;
+}
+
+.arrow {
+  display: flex;
+  background-color: white;
+  padding: 7px;
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  flex-shrink: 0;
+  width: 35px;
+  height: 35px;
+}
+
+.arrow img {
+  width: 20px;
+  height: 20px;
+}
+
+/* ============================================
+   GET TO KNOW YOUR THERAPIST SECTION
+   ============================================ */
+
+.therapist-container {
+  display: flex;
+  align-items: center;
+  gap: clamp(1.5rem, 5vw, 4rem);
+  padding: clamp(1.5rem, 5vw, 5rem);
+  margin: clamp(2rem, 5vw, 5rem) 0;
+  background: rgba(157, 183, 149, 0.2);
+}
+
+.therapist-img-cont {
+  flex: 0 0 auto;
+  width: clamp(200px, 40%, 500px);
+  max-width: 100%;
+}
+
+.therapist-img-cont img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 50%;
+  display: block;
+}
+
+.therapist-right {
+  flex: 1;
+  min-width: 0;
+}
+
+.therapist-txt {
+  margin-bottom: clamp(1.5rem, 3vw, 2rem);
+}
+
+.first-txt {
+  font-size: clamp(0.65rem, 1.5vw, 0.75rem);
+  color: #a3a29b;
+  margin-bottom: clamp(0.75rem, 2vw, 1rem);
+  letter-spacing: 0.05em;
+}
+
+.second-txt {
+  font-size: clamp(1.75rem, 5vw, 3.2rem);
+  font-weight: 400;
+  line-height: 1.2;
+  margin-bottom: clamp(1rem, 2vw, 1.5rem);
+}
+
+.third-txt {
+  font-size: clamp(0.875rem, 2vw, 0.95rem);
+  color: #808080;
+  line-height: 1.6;
+}
+
+.learn-btn {
+  border: none;
+  background-color: #416038;
+  padding: clamp(0.75rem, 2vw, 1rem) clamp(1.5rem, 4vw, 2.5rem);
+  border-radius: 25px;
+  font-size: clamp(0.8rem, 2vw, 0.9rem);
+  color: #e3e3e3;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.learn-btn:hover {
+  background-color: #335029;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(65, 96, 56, 0.2);
+}
+
+.learn-btn:active {
+  transform: translateY(0);
+}
+
+/* ============================================
+   MIND AND SPIRIT SECTION
+   ============================================ */
+
+.section {
+  padding: 80px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 32px;
+  font-weight: 400;
+  margin-bottom: 60px;
+  color: #2d3e3f;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 40px;
+  margin-bottom: 100px;
+}
+
+.feature-card {
+  text-align: center;
+}
+
+.icon-circle {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: rgba(157, 183, 149, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+  font-size: 24px;
+}
+
+.feature-title {
+  font-size: 18px;
+  font-weight: 400;
+  margin-bottom: 15px;
+  color: #2d3e3f;
+}
+
+.feature-description {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #888;
+  font-family: Arial, sans-serif;
+}
+
+/* ============================================
+   THERAPIES SECTION
+   ============================================ */
+
+.therapies-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(2rem, 5vw, 4rem);
+  align-items: center;
+  padding: clamp(2rem, 5vw, 4rem) clamp(1rem, 3vw, 2rem);
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.therapies-content {
+  width: 100%;
+}
+
+.therapies-title {
+  font-size: clamp(1.75rem, 4vw, 2.375rem);
+  font-weight: 400;
+  margin-bottom: clamp(1.5rem, 3vw, 2.5rem);
+  line-height: 1.3;
+  color: #2d3e3f;
+}
+
+.therapies-intro {
+  font-size: clamp(0.95rem, 2vw, 1rem);
+  margin-bottom: clamp(1.25rem, 2.5vw, 1.875rem);
+  color: #2d3e3f;
+  font-weight: 500;
+}
+
+.therapies-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.therapies-list li {
+  font-size: clamp(0.875rem, 2vw, 0.9375rem);
+  padding: clamp(0.5rem, 1vw, 0.625rem) 0;
+  color: #555;
+  position: relative;
+  padding-left: clamp(1.5rem, 3vw, 1.875rem);
+  font-family: Arial, sans-serif;
+  line-height: 1.5;
+}
+
+.therapies-list li:before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: #7a9a8f;
+  font-weight: bold;
+  font-size: clamp(1rem, 2vw, 1.125rem);
+}
+
+.image-collage {
+  position: relative;
+  height: clamp(350px, 50vw, 500px);
+  width: 100%;
+  min-height: 350px;
+}
+
+.collage-image {
+  position: absolute;
+  border-radius: clamp(12px, 2vw, 20px);
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.collage-image:hover {
+  transform: scale(1.05);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+  z-index: 10 !important;
+}
+
+.collage-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.image-1 {
+  width: clamp(180px, 48%, 240px);
+  height: clamp(240px, 64%, 320px);
+  top: 0;
+  left: 0;
+  z-index: 2;
+}
+
+.image-2 {
+  width: clamp(200px, 56%, 280px);
+  height: clamp(220px, 60%, 300px);
+  top: clamp(15px, 4%, 20px);
+  right: 0;
+  z-index: 3;
+}
+
+.image-3 {
+  width: clamp(140px, 40%, 200px);
+  height: clamp(140px, 40%, 200px);
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 4;
+}
+
+.color-block {
+  position: absolute;
+  border-radius: clamp(10px, 2vw, 15px);
+  z-index: 1;
+  transition: opacity 0.3s ease;
+}
+
+.block-1 {
+  width: clamp(140px, 40%, 200px);
+  height: clamp(130px, 36%, 180px);
+  background-color: #d4a574;
+  top: clamp(45px, 12%, 60px);
+  left: clamp(130px, 36%, 180px);
+}
+
+.block-2 {
+  width: clamp(130px, 36%, 180px);
+  height: clamp(140px, 40%, 200px);
+  background-color: #c47a5f;
+  top: clamp(100px, 28%, 140px);
+  right: clamp(30px, 8%, 40px);
+}
+
+/* ============================================
+   WHAT TO EXPECT SECTION
+   ============================================ */
+
+.expect-section {
+  padding: 60px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.expect-container {
+  display: grid;
+  grid-template-columns: 45% 55%;
+  background-color: rgb(107, 153, 173, 0.2);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+}
+
+.image-side {
+  position: relative;
+  overflow: hidden;
+  align-self: center;
+}
+
+.meditation-image {
+  width: 95%;
+  height: 80%;
+  align-items: center;
+  border-radius: 20px 0px 0px 20px;
+  margin: 30px 0 30px 30px;
+}
+
+.content-side {
+  padding: 60px 70px 60px 50px;
+  color: #fff;
+}
+
+.content-side h2 {
+  font-size: 42px;
+  font-weight: 300;
+  margin-bottom: 50px;
+  color: #7a9a8f;
+}
+
+.steps-list {
+  list-style: none;
+}
+
+.step-item {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 35px;
+  align-items: flex-start;
+}
+
+.step-item:last-child {
+  margin-bottom: 0;
+}
+
+.arrow-icon {
+  flex-shrink: 0;
+  font-size: 24px;
+  color: #7a9a8f;
+  margin-top: 2px;
+}
+
+.step-content p {
+  font-size: 14px;
+  line-height: 1.7;
+  color: #7a9a8f;
+  font-family: Arial, sans-serif;
+}
+
+/* ============================================
+   CAROUSEL SECTION
+   ============================================ */
+
+.carousel-container {
+  width: 100%;
+  overflow: hidden;
+  margin: clamp(2rem, 5vw, 5rem) 0;
+}
+
+.carousel {
+  width: 100%;
+  display: flex;
+  overflow: hidden;
+  padding: clamp(1rem, 3vw, 2rem) 0;
+}
+
+.carousel::-webkit-scrollbar {
+  display: none;
+}
+
+.group {
+  display: flex;
+  align-items: center;
+  gap: clamp(0.75rem, 2vw, 1.5rem);
+  animation: spin 40s infinite linear;
+  padding-right: clamp(0.75rem, 2vw, 1.5rem);
+  flex-shrink: 0;
+}
+
+.carousel:hover .group {
+  animation-play-state: paused;
+}
+
+@keyframes spin {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+.carousel-card {
+  flex: 0 0 clamp(220px, 25vw, 280px);
+  min-height: clamp(160px, 20vh, 200px);
+  background: #325a27;
+  border-radius: clamp(15px, 3vw, 25px);
+  padding: clamp(1.5rem, 4vw, 3rem) clamp(1rem, 2vw, 1.5rem);
+  border: clamp(2px, 0.3vw, 3px) solid #2d4442;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.carousel-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
+}
+
+.card-title {
+  font-size: clamp(1rem, 2.5vw, 1.2rem);
+  font-weight: 100;
+  color: white;
+  margin-bottom: clamp(0.5rem, 1.5vw, 0.75rem);
+  line-height: 1.3;
+}
+
+.card-description {
+  font-size: clamp(0.8rem, 2vw, 0.9rem);
+  color: #a3a29b;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* ============================================
+   WORKBOOK SECTION
+   ============================================ */
+
+.content-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+  gap: 80px;
+}
+
+.left-section {
+  flex: 1;
+  max-width: 450px;
+}
+
+.label {
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #888;
+  margin-bottom: 20px;
+}
+
+h1 {
+  font-size: 42px;
+  line-height: 1.3;
+  color: #2d3e3f;
+  margin-bottom: 35px;
+  font-weight: 400;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-row {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.form-row .form-group {
+  flex: 1;
+  margin-bottom: 0;
+}
+
+label {
+  display: block;
+  font-size: 13px;
+  color: #666;
+  margin-bottom: 8px;
+}
+
+input[type="text"],
+input[type="email"] {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+  background-color: #fff;
+  font-size: 14px;
+  color: #333;
+  transition: border-color 0.3s;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus {
+  outline: none;
+  border-color: #2d3e3f;
+}
+
+.checkbox-group {
+  display: flex;
+  align-items: center;
+  margin: 25px 0 30px 0;
+}
+
+input[type="checkbox"] {
+  margin-right: 10px;
+  width: 16px;
+  height: 16px;
+}
+
+.checkbox-group label {
+  margin-bottom: 0;
+  font-size: 13px;
+  color: #666;
+}
+
+.submit-btn {
+  background-color: #2d3e3f;
+  color: #fff;
+  padding: 14px 40px;
+  border: none;
+  border-radius: 25px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 11px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.submit-btn:hover {
+  background-color: #1a2728;
+}
+
+.right-section {
+  flex: 1;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.background-shape {
+  position: absolute;
+  right: -40px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 350px;
+  height: 450px;
+  background-color: rgb(45, 68, 66, 0.7);
+  border-radius: 20px 0 0 20px;
+  z-index: 1;
+}
+
+.workbook-mockup {
+  position: relative;
+  z-index: 2;
+  background-color: #fff;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+  max-width: 380px;
+}
+
+.mockup-image {
+  width: 100%;
+  position: relative;
+}
+
+.workbook-cover {
+  background-color: #e8e6e3;
+  padding: 30px;
+  border-radius: 8px;
+  position: relative;
+}
+
+.brand-logo {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.brand-logo img {
+  width: 120px;
+}
+
+.cover-design {
+  background-color: #fff;
+  padding: 25px;
+  border-radius: 5px;
+  border-top: 8px solid #b89968;
+  text-align: center;
+}
+
+.cover-design h2 {
+  font-size: 28px;
+  color: #2d3e3f;
+  margin-bottom: 20px;
+  font-weight: 400;
+}
+
+.botanical-illustration {
+  width: 100%;
+  max-width: 180px;
+  margin: 0 auto;
+}
+
+/* FOOTER SECTION */
+
+.hero-section {
+  flex: 1;
+  background: linear-gradient(180deg, #2a2a3a 0%, #1f1f2e 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.hero-content h1 {
+  color: #ffffff;
+  font-size: clamp(28px, 5vw, 48px);
+  font-weight: 600;
+  line-height: 1.2;
+  margin-bottom: 8px;
+}
+
+.hero-content h2 {
+  color: #ffffff;
+  font-size: clamp(24px, 4vw, 40px);
+  font-weight: 600;
+  line-height: 1.2;
+  margin-bottom: 16px;
+}
+
+.hero-content p {
+  color: #a0a0b0;
+  font-size: clamp(14px, 2vw, 16px);
+  margin-bottom: 32px;
+  max-width: 500px;
+}
+
+.cta-button {
+  background: #ffffff;
+  color: #1a1a1a;
+  border: none;
+  padding: 12px 24px;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.cta-button:hover {
+  background: #f0f0f0;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.2);
+}
+
+.footer {
+  background: #0f0f15;
+  padding: 32px 20px;
+  border-top: 1px solid #2a2a2a;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.footer-left {
+  flex: 1;
+  min-width: 250px;
+}
+
+.footer-left h3 {
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.footer-left p {
+  color: #707080;
+  font-size: 13px;
+  line-height: 1.5;
+  margin-bottom: 4px;
+}
+
+.footer-right {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.email-input {
+  background: #1a1a24;
+  border: 1px solid #2a2a3a;
+  color: #ffffff;
+  padding: 10px 16px;
+  border-radius: 6px;
+  font-size: 14px;
+  width: 250px;
+  transition: all 0.3s ease;
+}
+
+.email-input:focus {
+  outline: none;
+  border-color: #4a4a5a;
+  background: #20202a;
+}
+
+.email-input::placeholder {
+  color: #606070;
+}
+
+.subscribe-button {
+  background: #ffffff;
+  color: #0f0f15;
+  border: none;
+  padding: 10px 24px;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.subscribe-button:hover {
+  background: #f0f0f0;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.2);
+}
+
+/* MEDIA QUERIES - LARGE SCREENS */
+
+@media (min-width: 1600px) {
+  .container {
+    max-width: 1600px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .steps-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 4rem 5rem;
+  }
+
+  .steps-container .title {
+    font-size: 3.5rem;
+  }
+
+  .steps-card {
+    width: 28%;
+  }
+}
+
+/* MEDIA QUERIES - 1024px (Large Tablet) */
+
+@media (max-width: 1024px) {
+  .steps-container {
+    margin: 0% 3rem;
+  }
+
+  .steps-container .title {
+    font-size: 2.5rem;
+  }
+
+  .steps-card {
+    width: 30%;
+    min-width: 250px;
+  }
+
+  .card-img {
+    margin: 10em 0%;
+  }
+}
+
+/* MEDIA QUERIES - 968px (Tablet) */
+
+@media (max-width: 968px) {
+  /* Hero Section */
+  .container {
+    flex-direction: column;
+    min-height: auto;
+    padding: 3rem 2rem;
+  }
+
+  .cont-text {
+    flex: 1 1 100%;
+    text-align: center;
+    padding-left: 0;
+    padding-top: 2rem;
+  }
+
+  .hero-description {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .desktop-break {
+    display: none;
+  }
+
+  .cont-img {
+    flex: 1 1 100%;
+    padding-left: 0;
+    margin-top: 2rem;
+  }
+
+  .shape {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  /* Therapies Section */
+  .therapies-container {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .therapies-content {
+    order: 1;
+    text-align: center;
+  }
+
+  .therapies-list {
+    display: inline-block;
+    text-align: left;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+
+  .image-collage {
+    order: 2;
+    height: 450px;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  /* What to Expect Section */
+  .expect-container {
+    grid-template-columns: 1fr;
+  }
+
+  .image-side {
+    height: 350px;
+  }
+
+  .meditation-image {
+    margin: 20px;
+    height: calc(100% - 40px);
+  }
+
+  .content-side {
+    padding: 50px 40px;
+  }
+
+  .content-side h2 {
+    font-size: 36px;
+    margin-bottom: 40px;
+  }
+
+  /* Workbook Section */
+  .content-wrapper {
+    flex-direction: column;
+    gap: 50px;
+  }
+
+  .left-section,
+  .right-section {
+    max-width: 100%;
+  }
+
+  .background-shape {
+    display: none;
+  }
+}
+
+/* MEDIA QUERIES - 768px (Tablet/Mobile) */
+
+@media (max-width: 768px) {
+  /* Navigation */
+  .nav-bar ul {
+    display: none;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  /* Steps Section */
+  .steps-container {
+    margin: 0% 2rem;
+    padding: 2rem 0;
+  }
+
+  .steps-container .title {
+    font-size: 2rem;
+    margin-bottom: 4%;
+  }
+
+  .steps-cards {
+    gap: 15px;
+  }
+
+  .steps-card {
+    width: 45%;
+    min-width: 220px;
+    padding: 15px;
+  }
+
+  .card-img {
+    margin: 8em 0%;
+    height: 50%;
+  }
+
+  .text #title {
+    font-size: 1.1rem;
+  }
+
+  .text #subtitle {
+    font-size: 0.75rem;
+  }
+
+  /* Therapist Section */
+  .therapist-container {
+    flex-direction: column;
+    text-align: center;
+    gap: 2rem;
+  }
+
+  .therapist-img-cont {
+    width: clamp(180px, 60%, 350px);
+  }
+
+  .therapist-right {
+    width: 100%;
+  }
+
+  .learn-btn {
+    width: auto;
+    display: inline-block;
+  }
+
+  /* What to Expect Section */
+  .expect-section {
+    padding: 40px 15px;
+  }
+
+  .image-side {
+    height: 300px;
+  }
+
+  .content-side {
+    padding: 40px 30px;
+  }
+
+  .content-side h2 {
+    font-size: 32px;
+    margin-bottom: 35px;
+  }
+
+  .step-item {
+    margin-bottom: 30px;
+    gap: 15px;
+  }
+
+  .step-content p {
+    font-size: 13px;
+  }
+
+  .arrow-icon {
+    font-size: 20px;
+  }
+
+  /* Carousel Section */
+  .carousel-container {
+    margin: clamp(1.5rem, 4vw, 3rem) 0;
+  }
+
+  .carousel-card {
+    flex: 0 0 clamp(200px, 40vw, 250px);
+    min-height: clamp(150px, 18vh, 180px);
+  }
+
+  .group {
+    animation: spin 35s infinite linear;
+  }
+
+  /* Footer */
+  .footer-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer-left {
+    width: 100%;
+  }
+
+  .footer-right {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .email-input {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .subscribe-button {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+
+/* MEDIA QUERIES - 640px (Mobile) */
+
+@media (max-width: 640px) {
+  /* Hero Section */
+  .container {
+    padding: 2rem 1rem;
+    gap: 2rem;
+  }
+
+  .cont-text {
+    padding-top: 1rem;
+  }
+
+  .hero-title {
+    font-size: clamp(1.75rem, 8vw, 2.5rem);
+    padding-bottom: 1rem;
+  }
+
+  .hero-description {
+    font-size: 0.9rem;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+  }
+
+  .btn-2 {
+    width: 100%;
+    max-width: 320px;
+    padding: 0.875rem 1.5rem;
+  }
+
+  .cont-img {
+    margin-top: 1.5rem;
+  }
+
+  .hero-image {
+    width: 85%;
+    max-width: 350px;
+  }
+
+  .shape {
+    width: 75%;
+    height: 75%;
+    max-width: 300px;
+    max-height: 300px;
+    top: 40px;
+  }
+
+  /* Steps Section */
+  .steps-container {
+    margin: 0% 1.5rem;
+  }
+
+  .steps-container .title {
+    font-size: 1.8rem;
+    margin-bottom: 6%;
+  }
+
+  .steps-cards {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .steps-card {
+    width: 100%;
+    max-width: 400px;
+    min-width: unset;
+  }
+
+  .card-img {
+    margin: 6em 0%;
+    height: 40%;
+  }
+
+  .card-text {
+    gap: 10px;
+  }
+
+  .text #title {
+    font-size: 1.2rem;
+  }
+
+  .text #title br {
+    display: inline;
+  }
+
+  /* Therapies Section */
+  .therapies-container {
+    padding: 2rem 1rem;
+    gap: 2.5rem;
+  }
+
+  .image-collage {
+    height: 380px;
+  }
+
+  .image-1 {
+    width: 45%;
+    height: 55%;
+    top: 0;
+    left: 0;
+  }
+
+  .image-2 {
+    width: 52%;
+    height: 52%;
+    top: 10px;
+    right: 0;
+  }
+
+  .image-3 {
+    width: 42%;
+    height: 42%;
+    bottom: 0;
+    left: 50%;
+  }
+
+  .block-1 {
+    width: 38%;
+    height: 32%;
+    top: 50px;
+    left: 32%;
+  }
+
+  .block-2 {
+    width: 35%;
+    height: 38%;
+    top: 110px;
+    right: 8%;
+  }
+
+  .therapies-list li {
+    padding: 0.4rem 0;
+  }
+}
+
+/* MEDIA QUERIES - 480px (Small Mobile) */
+
+@media (max-width: 480px) {
+  /* Hero Section */
+  .container {
+    padding: 1.5rem 1rem;
+    min-height: auto;
+    flex-direction: column;
+  }
+
+  .cont-img {
+    padding-left: 0;
+    width: 80%;
+  }
+
+  .cont-text {
+    font-size: 2.5rem;
+    text-align: center;
+  }
+
+  .shape {
+    margin-left: 0%;
+  }
+
+  .hero-title {
+    font-size: 1.75rem;
+  }
+
+  .hero-description {
+    font-size: 0.875rem;
+  }
+
+  .btn-2 {
+    font-size: 0.875rem;
+    padding: 0.75rem 1.25rem;
+  }
+
+  .hero-image {
+    width: 90%;
+    max-width: 280px;
+  }
+
+  .shape {
+    width: 80%;
+    height: 80%;
+    max-width: 250px;
+    max-height: 250px;
+    top: 30px;
+  }
+
+  /* Steps Section */
+  .steps-container {
+    margin: 0% 1rem;
+    padding: 1.5rem 0;
+  }
+
+  .steps-container .title {
+    font-size: 1.5rem;
+    margin-bottom: 8%;
+  }
+
+  .steps-card {
+    padding: 12px;
+  }
+
+  .card-img {
+    margin: 4em 0%;
+    height: 35%;
+  }
+
+  .text #title {
+    font-size: 1rem;
+  }
+
+  .text #subtitle {
+    font-size: 0.7rem;
+  }
+
+  .arrow {
+    width: 30px;
+    height: 30px;
+    padding: 5px;
+  }
+
+  .arrow img {
+    width: 16px;
+    height: 16px;
+  }
+
+  /* Therapist Section */
+  .therapist-container {
+    padding: 1.5rem 1rem;
+    margin: 1.5rem 0;
+  }
+
+  .therapist-img-cont {
+    width: clamp(150px, 70%, 250px);
+  }
+
+  .second-txt {
+    font-size: clamp(1.5rem, 6vw, 2rem);
+  }
+
+  /* Therapies Section */
+  .therapies-container {
+    padding: 1.5rem 1rem;
+    gap: 2rem;
+  }
+
+  .therapies-title {
+    font-size: 1.5rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .therapies-intro {
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+  }
+
+  .image-collage {
+    height: 320px;
+  }
+
+  .collage-image {
+    border-radius: 12px;
+  }
+
+  .color-block {
+    border-radius: 10px;
+  }
+
+  /* What to Expect Section */
+  .expect-section {
+    padding: 30px 10px;
+  }
+
+  .image-side {
+    height: 250px;
+  }
+
+  .meditation-image {
+    margin: 15px;
+    height: calc(100% - 30px);
+  }
+
+  .content-side {
+    padding: 35px 25px;
+  }
+
+  .content-side h2 {
+    font-size: 28px;
+    margin-bottom: 30px;
+  }
+
+  .step-item {
+    margin-bottom: 25px;
+  }
+
+  .step-content p {
+    font-size: 12px;
+    line-height: 1.6;
+  }
+
+  /* Carousel Section */
+  .carousel-container {
+    margin: 1.5rem 0;
+  }
+
+  .carousel {
+    padding: 1rem 0;
+  }
+
+  .carousel-card {
+    flex: 0 0 clamp(180px, 70vw, 220px);
+    min-height: clamp(140px, 22vh, 170px);
+    padding: 1.5rem 1rem;
+  }
+
+  .card-title {
+    font-size: clamp(0.95rem, 4vw, 1.1rem);
+    margin-bottom: 0.5rem;
+  }
+
+  .card-description {
+    font-size: clamp(0.75rem, 3.5vw, 0.85rem);
+  }
+
+  .group {
+    animation: spin 30s infinite linear;
+    gap: 1rem;
+  }
+
+  /* Footer */
+  .footer {
+    padding: 24px 16px;
+  }
+
+  .footer-left h3 {
+    font-size: 15px;
+  }
+
+  .footer-left p {
+    font-size: 12px;
+  }
+
+  .email-input,
+  .subscribe-button {
+    font-size: 13px;
+    padding: 9px 16px;
+  }
+
+  /* Legacy selectors */
+  .about {
+    flex-direction: column;
+  }
+
+  .reviewer {
+    margin-bottom: 15%;
+  }
+
+  .advice-cards {
+    align-content: center;
+    grid-template-columns: 1fr;
+  }
+}
+
+/* MEDIA QUERIES - 360px (Very Small Mobile) */
+
+@media (max-width: 360px) {
+  .hero-title {
+    font-size: 1.5rem;
+  }
+
+  .hero-image {
+    width: 95%;
+    max-width: 240px;
+  }
+
+  .shape {
+    max-width: 220px;
+    max-height: 220px;
+  }
+
+  .therapist-img-cont {
+    width: 90%;
+    max-width: 200px;
+  }
+
+  .image-collage {
+    height: 280px;
+  }
+
+  .therapies-list li {
+    font-size: 0.85rem;
+    padding: 0.35rem 0;
+  }
+
+  .carousel-card {
+    flex: 0 0 clamp(160px, 80vw, 200px);
+    min-height: 130px;
+    padding: 1.25rem 0.875rem;
+  }
+
+  .card-title {
+    font-size: 0.95rem;
+  }
+
+  .card-description {
+    font-size: 0.75rem;
+  }
+}
+
+/* MEDIA QUERIES - LANDSCAPE MODE */
+
+@media (max-height: 500px) and (orientation: landscape) {
+  .container {
+    min-height: auto;
+    flex-direction: row;
+  }
+
+  .cont-text,
+  .cont-img {
+    flex: 1 1 45%;
+  }
+
+  .shape {
+    width: 60%;
+    height: 60%;
+  }
+}
+
+/* ACCESSIBILITY - REDUCED MOTION */
+
+@media (prefers-reduced-motion: reduce) {
+  .shape {
+    animation: none;
+  }
+
+  .btn-2:hover {
+    transform: none;
+  }
+
+  .btn-2:active {
+    transform: none;
+  }
+
+  .collage-image:hover {
+    transform: none;
+  }
+
+  .collage-image,
+  .color-block {
+    transition: none;
+  }
+
+  .group {
+    animation: spin 80s infinite linear;
+  }
+}
